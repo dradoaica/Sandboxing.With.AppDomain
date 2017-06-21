@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Plugin.Common\Plugin.Common.csproj">
-      <Project>{1c80d634-79df-46a9-865d-5d889595459a}</Project>
+      <Project>{b3e69d7f-c128-4cc0-866b-883496fdf4ea}</Project>
       <Name>Plugin.Common</Name>
     </ProjectReference>
   </ItemGroup>
