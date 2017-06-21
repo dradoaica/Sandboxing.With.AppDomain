@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Security;
+using System.Security.Policy;
 
 namespace Sandboxing.With.AppDomain
 {
@@ -18,6 +20,9 @@ namespace Sandboxing.With.AppDomain
             options.ApplicationBase = Path.GetFullPath(@"..\..\..\Plugin.Implementation\bin\Debug");
             options.AssemblyName = "Plugin.Implementation";
             options.TypeName = "Plugin.Implementation.PluginImpl";
+            //options.Evidence = new Evidence();
+            //options.Evidence.AddHostEvidence(new Zone(SecurityZone.Internet));
+            //options.PermissionSet = SecurityManager.GetStandardSandbox(options.Evidence);
 
             var pluginSandbox = new PluginSandbox(options);
             Console.WriteLine("--call entry point--");

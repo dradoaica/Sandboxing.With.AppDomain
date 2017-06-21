@@ -30,7 +30,10 @@ namespace Plugin.Common
             {
                 var info = new AppDomainSetup();
                 info.ApplicationBase = options.ApplicationBase;
-                _sandbox = AppDomain.CreateDomain(options.FrendlyName, null, info);
+                if (options.PermissionSet == null)
+                    _sandbox = AppDomain.CreateDomain(options.FrendlyName, options.Evidence, info);
+                else
+                    _sandbox = AppDomain.CreateDomain(options.FrendlyName, options.Evidence, info, options.PermissionSet);
                 object obj = _sandbox.CreateInstanceAndUnwrap(options.AssemblyName, options.TypeName);
                 _plugin = obj as PluginBase;
                 if (_plugin == null)
