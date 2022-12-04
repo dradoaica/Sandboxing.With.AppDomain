@@ -17,7 +17,7 @@ namespace Sandboxing.With.AppDomain
 
             Console.WriteLine("--configure sandbox (with new application domain)--");
             var options = new PluginSandboxOptions();
-            options.FrendlyName = "Plugin";
+            options.FriendlyName = "Plugin";
             options.ApplicationBase = Path.GetFullPath(@"..\..\..\Plugin.Implementation\bin\Debug");
             options.AssemblyName = "Plugin.Implementation";
             options.TypeName = "Plugin.Implementation.PluginImpl";
